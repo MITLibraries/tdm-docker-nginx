@@ -1,0 +1,7 @@
+server {
+  location / {
+    proxy_pass http://${FEDORA_SERVICE_HOST}:${FEDORA_SERVICE_PORT_HTTP};
+    auth_basic            "Fedora";
+    auth_basic_user_file  /etc/nginx/htpasswd;
+  }
+}
